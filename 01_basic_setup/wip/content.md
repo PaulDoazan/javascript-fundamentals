@@ -1,4 +1,4 @@
-# notions abordés :
+# notions abordées :
 
 1. Création et organisation du projet, découverte de la console du navigateur.
 2. Distinction let / const, (présentation de var)

@@ -71,3 +71,9 @@ input, select {
     margin-left: 20px;
 }
 
+.container-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

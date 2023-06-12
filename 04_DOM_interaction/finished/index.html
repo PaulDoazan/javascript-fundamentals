@@ -6,9 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-
-    <!-- <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> -->
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="src/main.js"></script>
 </head>
 <body>
     <h1>Interagir avec le DOM</h1>
@@ -26,8 +24,21 @@
             <div class="text-to-display-3">Texte à afficher</div>
         </div>
         <div class="exo">
-            <input type="range" min="10" max="50" value=40 class="input-4">
-            <div class="text-to-display-4">40</div>
+            <div class="container-dates">
+                <label for="start">Start date:</label>
+
+                <input class="input-4" type="date" id="start" name="trip-start"
+                    value="2018-07-22"
+                    min="2018-01-01" max="2018-12-31">
+
+                    <label for="end">End date:</label>
+
+                <input class="input-4" type="date" id="end" name="trip-end"
+                    value="2018-08-22"
+                    min="2018-01-01" max="2018-12-31">
+
+                <div class="text-to-display-4">Trip last : </div>
+            </div>
         </div>
         <div class="exo">
             <form class="form-2">

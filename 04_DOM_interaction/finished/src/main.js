@@ -28,11 +28,25 @@ input3.addEventListener('input', (e) => {
 
 //EXO 4
 const textToDisplay4 = document.querySelector('.text-to-display-4')
-const input4 = document.querySelector('.input-4')
+const input4 = document.querySelectorAll('.input-4')
 
-input4.addEventListener('change', (e) => {
-    textToDisplay4.textContent = e.target.value
+const difference = 0;
+
+input4[0].addEventListener('change', (e) => {
+    textToDisplay4.textContent = `Trip last ${getDifferenceBetweenDates(input4[0].value, input4[1].value)} days`
 })
+
+input4[1].addEventListener('change', (e) => {
+    textToDisplay4.textContent = `Trip last ${getDifferenceBetweenDates(input4[0].value, input4[1].value)} days`
+})
+
+function getDifferenceBetweenDates(d1, d2) {
+    const date1 = new Date(d1);
+    const date2 = new Date(d2);
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+}
 
 //EXO 5
 const textToDisplay5 = document.querySelector('.text-to-display-5')

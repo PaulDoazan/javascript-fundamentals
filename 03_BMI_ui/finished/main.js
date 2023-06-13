@@ -9,15 +9,15 @@ const BMIData = [
 
 // IMC = poids en kg / taille² en m
 
-
 const formBtn = document.querySelector('.form-btn')
 const displayBMI = document.querySelector('.bmi-value')
 const description = document.querySelector('.description')
+const inputs = document.querySelectorAll('input');
+
 formBtn.addEventListener('click', onFormSubmit)
 
 function onFormSubmit(e) {
   e.preventDefault();
-  const inputs = document.querySelectorAll('input');
   const height = inputs[0]
   const weight = inputs[1]
 

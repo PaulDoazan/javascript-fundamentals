@@ -198,8 +198,23 @@ const pizzas = [
     }
 ]
 
+const pizzas2 = [
+    {
+        name: '8 fromages',
+        price: 10,
+        ingredients: ['mozzarella', 'reblochon', 'gruyère', 'oignon', 'champignon'],
+        baseTomate: false
+    },
+    {
+        name: '12 fromages',
+        price: 18,
+        ingredients: ['mozzarella', 'chèvre', 'miel'],
+        baseTomate: false
+    },
+]
+
 // écrire une fonction qui prend en parametre un tableau, cette fonction retourne tous les .name des elements du tableau dans un tableau names[]
-console.log(getAllNames(pizzas))
+// console.log(getAllNames(pizzas2))
 
 function getAllNames(tab) {
     let pizzaNames = [];
@@ -211,7 +226,8 @@ function getAllNames(tab) {
 }
 
 // # 2. Ecrire une fonction qui prend en parametre le tableau pizzas et qui retourne le prix moyen des pizzas
-// console.log(getAveragePrice(pizzas));
+// console.log(getAveragePrice(pizzas2));
+
 function getAveragePrice(arr) {
     let totalPrice = 0;
 
@@ -223,16 +239,58 @@ function getAveragePrice(arr) {
 
 // # 3. Ecrire une fonction qui prend en parametre un nom de pizza et qui retourne un tableau des ingredients de cette pizza
 
-// console.log(getIngredientsByPizzaName('Regina', pizzas));
+// console.log(getIngredientsByPizzaName('Montagnarde', pizzas));
 
 function getIngredientsByPizzaName(name, arr) {
-    let ingredients = []
+    let targetPizza
 
-    //
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name === name) {
+            targetPizza = arr[i];
+            break;
+        }
+    }
 
-    return ingredients
+    let result = []
+    if (targetPizza) {
+        console.log(targetPizza)
+        result = targetPizza.ingredients
+    }
+
+    return result
 }
-
 // # 4. Ecrire une fonction qui prend en parametre un tableau de pizzas et qui retourne un tableau de tous les ingredients, en evitant les elements dupliques
+// const result = getAllIngredients(pizzas)
+// // console.log(result);
+// function getAllIngredients(tableau) {
+//     let allIngredients = [];
 
-// # 5. Ecrire une fonction qui prend en parametre un ingredient et qui retourne un tableau des noms des pizzas qui ont cet ingredient
+//     for (let i = 0; i < tableau.length; i++) {
+//         const currentPizza = tableau[i];
+//         for (let j = 0; j < currentPizza.ingredients.length; j++) {
+//             if (!allIngredients.includes(currentPizza.ingredients[j])) {
+//                 allIngredients.push(currentPizza.ingredients[j])
+//             }
+//         }
+//     }
+
+//     return allIngredients;
+// }
+
+// # 5. Ecrire une fonction qui prend en parametre un ingredient et un tableau de pizzas, la fonction retourne un tableau des noms des pizzas qui ont cet ingredient
+
+const result = getPizzasByIngredientName(pizzas2, 'tomate');
+console.log(result);
+
+function getPizzasByIngredientName(arr, ingredientName) {
+    let pizzaNames = []
+
+    for (let i = 0; i < arr.length; i++) {
+        const currentPizza = arr[i]
+        if (currentPizza.ingredients.includes(ingredientName)) {
+            pizzaNames.push(currentPizza.name)
+        }
+    }
+
+    return pizzaNames
+}

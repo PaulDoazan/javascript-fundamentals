@@ -77,14 +77,21 @@ btn.addEventListener('click', onBtnClick)
 const colors = ['yellow', 'red']
 
 function onBtnClick() {
+    mainContainer.textContent = ''
+    let nbBlock = 0;
     for (let line = 0; line < 10; line++) {
         for (let col = 0; col < 10; col++) {
-            const newDiv = document.createElement("div");
-            mainContainer.appendChild(newDiv)
-            newDiv.classList.add('new-div')
-            newDiv.style.left = `${col}0vw`
-            newDiv.style.top = `${line}0vh`
-            newDiv.style.backgroundColor = colors[(col + line) % 2]
+            (function (c, l) {
+                setTimeout(function () {
+                    const newDiv = document.createElement("div");
+                    mainContainer.appendChild(newDiv)
+                    newDiv.classList.add('new-div')
+                    newDiv.style.left = `${c}0vw`
+                    newDiv.style.top = `${l}0vh`
+                    newDiv.style.backgroundColor = colors[(col + line) % 2]
+                }, 50 * nbBlock)
+            })(col, line)
+            nbBlock++
         }
     }
 }

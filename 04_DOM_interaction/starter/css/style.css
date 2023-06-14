@@ -39,19 +39,41 @@ h1 {
     padding: 20px;
 }
 
-.btn {
-    padding: 10px;
-    margin: 5px;
+.div-to-color-1 {
+    background-color: red;
 }
 
-.result {
+.btn {
+    margin: 10px;
+    padding: 10px;
+}
+
+input, select {
+    margin: 10px;
+}
+
+.colored {
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.div-to-color-7 {
+    background-color: black;
+}
+
+.div-to-color-8 {
+    background-color: blue;
+}
+
+.text-to-display-9 {
     margin-left: 20px;
 }
 
-.result-1, .result-7, .result-8 {
-    width: 80px;
-    height: 80px;
-    background-color: red;
-    border-radius: 50px;
+.container-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 

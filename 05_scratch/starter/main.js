@@ -25,18 +25,47 @@
 // }
 
 // 1. Implémenter un click sur btn qui change la couleur de fond du container
-// 2. Après recherche de 2 nouveaux types d'event, implémenter le script qui permet de changer la couleur du container en survol du bouton, et sorti du bouton, la couleur du container revient au gris initial
+// Exo annexe : Après recherche de 2 nouveaux types d'event, implémenter le script qui permet de changer la couleur du container en survol du bouton, et sorti du bouton, la couleur du container revient au gris initial
 
+// const container = document.querySelector('.container')
+// const btn = document.querySelector('.btn')
+
+// btn.addEventListener('click', onBtnClick)
+
+// function onBtnClick() {
+//     container.style.backgroundColor = "black"
+// }
+
+
+// 2. Alterner 2 couleurs du container avec un click
 const container = document.querySelector('.container')
+const mainContainer = document.querySelector('.main-container')
 const btn = document.querySelector('.btn')
 
-btn.addEventListener('mouseenter', onEnter)
-btn.addEventListener('mouseleave', onLeave)
+const newDiv = document.createElement("div");
+newDiv.classList.add('new-div')
+mainContainer.appendChild(newDiv)
 
-function onEnter() {
-    container.style.backgroundColor = "black"
+const newDiv2 = document.createElement("div");
+newDiv2.classList.add('new-div')
+mainContainer.appendChild(newDiv2)
+newDiv2.style.left = "10vw"
+newDiv2.style.backgroundColor = "green"
+
+btn.addEventListener('mouseenter', onBtnClick)
+btn.addEventListener('mouseleave', onBtnClick)
+
+let changeColorToBlack = true;
+let originColor = container.style.backgroundColor;
+
+function onBtnClick() {
+    if (changeColorToBlack) {
+        container.style.backgroundColor = 'black'
+    } else {
+        container.style.backgroundColor = originColor
+    }
+
+    changeColorToBlack = !changeColorToBlack
 }
 
-function onLeave() {
-    container.style.backgroundColor = "#eeeeee"
-}
+// Implémenter la fonction pour créer une mosaique de div qui remplit tout le main-container, 10 colomnes et 10 lignes, couleur au choix

@@ -40,3 +40,18 @@ body {
 .btn:hover {
   background-color: #c03110;
 }
+
+.main-container {
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.new-div {
+  position: absolute;
+  width: 10vw;
+  height: 10vh;
+  background-color: #c03110;
+}

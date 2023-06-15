@@ -58,25 +58,7 @@
 // middleBtn.addEventListener('click', function (event) {
 //     event.stopPropagation()
 //     console.log(event.target, event.currentTarget)
-// })
-
-// let firstNumber = 9
-// const secondNumber = 2
-// let result = firstNumber % secondNumber
-
-// let myArray = [2, 3, 5, 7]
-// let myObject = {
-//     firstname: 'Paul',
-//     lastname: 'DOAZAN',
-//     age: 35,
-//     hello() {
-//         console.log("Hello World")
-//     }
-// }
-
-// const result2 = myObject.firstname + myObject.lastname
-
-// console.log(myObject.hello())
+// })                       
 
 // EXO 6
 // const result6 = document.querySelector('.text-to-display-6')
@@ -111,26 +93,49 @@
 // }
 
 // EXO 9 
-const result9 = document.querySelector('.text-to-display-9')
-const checkboxes = document.querySelectorAll('.checkbox')
+// const result9 = document.querySelector('.text-to-display-9')
+// const checkboxes = document.querySelectorAll('.checkbox')
 
-for (let i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].addEventListener('change', onCheckBoxChange)
+// for (let i = 0; i < checkboxes.length; i++) {
+//     checkboxes[i].addEventListener('change', onCheckBoxChange)
+// }
+
+// // checkboxes[0].addEventListener('change', onCheckBoxChange)
+// // checkboxes[1].addEventListener('change', onCheckBoxChange)
+
+// function onCheckBoxChange() {
+//     let myStr = ''
+//     if (checkboxes[0].checked) {
+//         myStr += checkboxes[0].value
+//     }
+
+//     if (checkboxes[1].checked) {
+//         if (myStr) myStr += ' - '
+//         myStr += checkboxes[1].value
+//     }
+
+//     result9.textContent = myStr
+// }
+
+// EXO 3
+const result3 = document.querySelector('.text-to-display-4')
+const inputs3 = document.querySelectorAll('.input-4')
+
+for (let i = 0; i < inputs3.length; i++) {
+    inputs3[i].addEventListener('input', onInput3Change)
 }
 
-// checkboxes[0].addEventListener('change', onCheckBoxChange)
-// checkboxes[1].addEventListener('change', onCheckBoxChange)
 
-function onCheckBoxChange() {
-    let myStr = ''
-    if (checkboxes[0].checked) {
-        myStr += checkboxes[0].value
-    }
+inputs3[1].addEventListener('input', onInput3Change)
 
-    if (checkboxes[1].checked) {
-        if (myStr) myStr += ' - '
-        myStr += checkboxes[1].value
-    }
+function onInput3Change() {
+    let result = getDaysBetweenDates(inputs3[1].value, inputs3[0].value)
+    result3.textContent = `Le séjour durera ${result} jours.`;
+}
 
-    result9.textContent = myStr
+function getDaysBetweenDates(date2, date1) {
+    let d2 = new Date(date2)
+    let d1 = new Date(date1)
+    let diffTime = d2 - d1;
+    return (diffTime / (1000 * 60 * 60 * 24))
 }

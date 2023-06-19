@@ -114,9 +114,8 @@
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
-    /* border-radius: 50px; */
+    width: 20px;
+    height: 20px;
     background-color: var(--deep-blue);
     margin: 5px;
     cursor: pointer;

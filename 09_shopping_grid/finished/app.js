@@ -40,6 +40,8 @@ function displayData(data, categories = []) {
             ratingHTML += '<i class="fa-regular fa-star"></i>'
         }
 
+        ratingHTML += ` <span class='rate'>${product.rating.rate}</span>`
+
         listItem.className = "col-md-4";
         listItem.innerHTML = `
             <div class="card p-3 m-1">

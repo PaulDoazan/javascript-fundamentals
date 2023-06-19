@@ -3,7 +3,11 @@ body {
 }
 
 .ratings i {
-  color: green;
+  color: #f5b027;
+}
+
+.rate {
+  color: #f5b027;
 }
 
 .install span {

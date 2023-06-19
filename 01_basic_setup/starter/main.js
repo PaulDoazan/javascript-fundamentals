@@ -13,14 +13,43 @@ strTotal += maVariable3
 const nb1 = 12
 const nb2 = 2
 
+const price1 = 149
+const price2 = 199
+const coefTax = 1.2
+
+const firstname = "Paul"
+const lastname = "DOAZAN"
+
 let nbTotal = 0
 
-let allowed = true
+const myArray = [190, 23, 42, 50]
+const myArray2 = [190, 23, 42, 50, 90, 87]
 
-if (allowed) {
-    nbTotal += nb1
-} else {
-    nbTotal += nb1 + nb2
+// let allowed = true
+
+// if (allowed) {
+//     nbTotal += nb1
+// } else {
+//     nbTotal += nb1 + nb2
+// }
+
+const myObj = {
+    firstname: 'Paul',
+    lastname: 'DOAZAN',
+    age: 35,
+    town: 'Talence',
+    hobbies: ['climbing', 'Pelote Basque']
 }
 
-myContainer.textContent = nbTotal
+myContainer.textContent = myObj.hobbies[1]
+myContainer.style.backgroundColor = 'green'
+myContainer.style.color = 'white'
+
+function addParameters(param1 = 0, param2 = 0, param3 = 0, param4 = 0) {
+    const result = param1 + param2 + param3 + param4;
+    return result;
+}
+
+function getLastPriceWithTax(pricesArr) {
+    return pricesArr[pricesArr.length - 1] * coefTax;
+}

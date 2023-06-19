@@ -27,7 +27,7 @@
 }
 
 .slider-frame {
-    margin: 33px auto;
+    margin: 33px auto 0;
     width: var(--img-width);
     height: var(--img-height);
 }
@@ -104,4 +104,20 @@
     margin-left: 24px;
     margin-right: 10px;
     user-select: none;
+}
+
+.dots-container {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    /* border-radius: 50px; */
+    background-color: var(--deep-blue);
+    margin: 5px;
+    cursor: pointer;
 }

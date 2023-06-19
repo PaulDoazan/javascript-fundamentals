@@ -25,7 +25,7 @@ let nbTotal = 0
 const myArray = [190, 23, 42, 50]
 const myArray2 = [190, 23, 42, 50, 90, 87]
 
-// let allowed = true
+let allowed = true
 
 // if (allowed) {
 //     nbTotal += nb1
@@ -41,9 +41,18 @@ const myObj = {
     hobbies: ['climbing', 'Pelote Basque']
 }
 
-myContainer.textContent = myObj.hobbies[1]
+
 myContainer.style.backgroundColor = 'green'
 myContainer.style.color = 'white'
+
+let nb10 = 10;
+
+if (allowed) {
+    nb10 += 2
+}
+
+myContainer.textContent = nb10
+
 
 function addParameters(param1 = 0, param2 = 0, param3 = 0, param4 = 0) {
     const result = param1 + param2 + param3 + param4;

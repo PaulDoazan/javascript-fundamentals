@@ -89,6 +89,14 @@
     transform: translate(50%, -10%);
 }
 
+.btn-effect {
+    transform-origin: center center;
+}
+
+.btn-effect:active {
+    scale: 0.9;
+}
+
 .slider-legend-container {
     background-color: var(--transparent-grey);
     position: absolute;

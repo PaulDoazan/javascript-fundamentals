@@ -1,0 +1,23 @@
+body {
+  background-color: #eee !important;
+}
+
+.ratings i {
+  color: green;
+}
+
+.install span {
+  font-size: 12px;
+}
+
+.col-md-4 {
+  margin-top: 27px;
+}
+
+.custom-margin {
+  margin-left: 1em;
+}
+
+.form-select {
+  width: 150px !important;
+}

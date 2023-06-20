@@ -76,35 +76,33 @@ function orderList(data) {
     if (select.value === 'Trier par') return
 
     let asc = select.value.includes('asc')
-    let criteria = select.value.split('_')[0]
+    let criteria = select.value.split(' ')
 
     let result = 1
     if (!asc) {
         result = -1
     }
 
-    if (criteria === 'price') {
-        data.sort((a, b) => {
-            if (a.price < b.price) {
-                return -result;
-            } else if (a.price > b.price) {
-                return result;
-            } else {
-                return 0;
-            }
-        });
-    } else {
-        data.sort((a, b) => {
-            if (a.rating.rate < b.rating.rate) {
-                return -result;
-            } else if (a.rating.rate > b.rating.rate) {
-                return result;
-            } else {
-                return 0;
-            }
-        });
-    }
+    data.sort((a, b) => {
+        let propertyA, propertyB
+
+        if (criteria.includes('price')) {
+            propertyA = a.price
+            propertyB = b.price
+        } else {
+            propertyA = a.rating.rate
+            propertyB = b.rating.rate
+        }
+        if (propertyA < propertyB) {
+            return -result;
+        } else if (propertyA > propertyB) {
+            return result;
+        } else {
+            return 0;
+        }
+    });
 }
+
 
 function onSelect(e) {
     onListChange()

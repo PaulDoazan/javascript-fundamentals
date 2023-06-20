@@ -6,7 +6,7 @@ let data;
 fetchData()
 
 checks.forEach((check) => {
-    check.addEventListener('change', onCheckChange)
+    check.addEventListener('change', onListChange)
 })
 
 select.addEventListener('change', onSelect)
@@ -20,6 +20,7 @@ async function fetchData() {
         }
 
         data = await response.json()
+        console.log(data)
         displayData(data);
     }
     catch (error) {
@@ -60,7 +61,7 @@ function displayData(data, categories = []) {
     })
 }
 
-function onCheckChange(e) {
+function onListChange(e) {
     let categories = []
     checks.forEach((check) => {
         if (check.checked) {
@@ -75,7 +76,7 @@ function orderList(data) {
     if (select.value === 'Trier par') return
 
     let asc = select.value.includes('asc')
-    let criteria = select.value.split(' ')[0]
+    let criteria = select.value.split('_')[0]
 
     let result = 1
     if (!asc) {
@@ -94,9 +95,9 @@ function orderList(data) {
         });
     } else {
         data.sort((a, b) => {
-            if (a.price < b.price) {
+            if (a.rating.rate < b.rating.rate) {
                 return -result;
-            } else if (a.price > b.price) {
+            } else if (a.rating.rate > b.rating.rate) {
                 return result;
             } else {
                 return 0;
@@ -106,5 +107,5 @@ function orderList(data) {
 }
 
 function onSelect(e) {
-    console.log(e.currentTarget.value)
+    onListChange()
 }

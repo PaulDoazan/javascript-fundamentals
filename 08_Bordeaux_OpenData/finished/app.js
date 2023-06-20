@@ -62,3 +62,4 @@ function displayData(data) {
         visitors[index].style.transform = `scaleX(${ratio})`
     })
 }
+

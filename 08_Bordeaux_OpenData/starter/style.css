@@ -7,6 +7,7 @@
   --grey: #6e8cae;
   --red: #fc7472;
   --dark-red: #c64c4a;
+  --fetch-red: #731312;
   --border-radius : 20px;
   --min-width: 360px;
 }
@@ -73,7 +74,7 @@ button {
 
 .searching {
   pointer-events: none;
-  background-color: var(--dark-red);
+  background-color: var(--fetch-red);;
 }
 
 .searching:hover {

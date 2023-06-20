@@ -1,5 +1,6 @@
 const containerRow = document.querySelector('.row')
 const checks = document.querySelectorAll('.btn-check');
+const select = document.querySelector('.form-select');
 
 let data;
 fetchData()
@@ -7,6 +8,8 @@ fetchData()
 checks.forEach((check) => {
     check.addEventListener('change', onCheckChange)
 })
+
+select.addEventListener('change', onSelect)
 
 async function fetchData() {
     try {
@@ -25,6 +28,7 @@ async function fetchData() {
 }
 
 function displayData(data, categories = []) {
+    orderList(data);
     containerRow.textContent = ''
     data.forEach((product) => {
         if (categories.length !== 0) {
@@ -65,4 +69,42 @@ function onCheckChange(e) {
     })
 
     displayData(data, categories)
+}
+
+function orderList(data) {
+    if (select.value === 'Trier par') return
+
+    let asc = select.value.includes('asc')
+    let criteria = select.value.split(' ')[0]
+
+    let result = 1
+    if (!asc) {
+        result = -1
+    }
+
+    if (criteria === 'price') {
+        data.sort((a, b) => {
+            if (a.price < b.price) {
+                return -result;
+            } else if (a.price > b.price) {
+                return result;
+            } else {
+                return 0;
+            }
+        });
+    } else {
+        data.sort((a, b) => {
+            if (a.price < b.price) {
+                return -result;
+            } else if (a.price > b.price) {
+                return result;
+            } else {
+                return 0;
+            }
+        });
+    }
+}
+
+function onSelect(e) {
+    console.log(e.currentTarget.value)
 }

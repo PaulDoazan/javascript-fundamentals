@@ -41,12 +41,12 @@ function btnChange(state) {
 }
 
 function displayData(data) {
-    let sortedRecords = [...data.records];
-    sortedRecords.sort((a, b) => {
+    //let sortedRecords = [...data.records];
+    data.records.sort((a, b) => {
         let result = ((a.fields.fmicourante / a.fields.fmizonmax) - (b.fields.fmicourante / b.fields.fmizonmax)) * -1
         return result
     })
-    sortedRecords.forEach((record, index) => {
+    data.records.forEach((record, index) => {
         let current = 0;
         if (record.fields.fmicourante > 0) current = record.fields.fmicourante;
 

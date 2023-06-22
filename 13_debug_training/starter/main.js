@@ -6,7 +6,7 @@ const slidesData = [
 
 // on récupère les éléments du DOM pour interagir avec la page web
 const btns = document.querySelectorAll(".slider-btn");
-const imgs = document.querySelectorAll(".slider-img");
+const imgs = document.querySelectorAll("slider-img");
 const dots = document.querySelectorAll(".dot");
 const title = document.querySelector('.slider-title')
 const legend = document.querySelector('.slider-legend')
@@ -18,19 +18,19 @@ let slideIndex;
 btns.forEach((el, index) => {
     // el.maNouvellePropriete = 'nouvellePropriete_' + index + '!'
     el.leftOrRight = index;
-    el.addEventListener("click", onClickBtn);
+    el.addEventListener("click", onClikBtn);
 });
 
 // on déclare les clicks sur les "puces" 
 dots.forEach((dot, ind) => {
     dot.style.opacity = 0.5
     dot.indexPosition = ind
-    dot.addEventListener('click', onClickDot)
+    dot.addEventListener('clck', onClickDot)
 })
 
 
 // on initialise la page web au chargement du site
-init();
+init;
 
 function onClickDot(e) {
     slideIndex = e.currentTarget.indexPosition
@@ -39,9 +39,9 @@ function onClickDot(e) {
 
 function onClickBtn(e) {
     if (e.currentTarget.leftOrRight === 0) {
-        slideIndex--;
-    } else {
         slideIndex++;
+    } else {
+        slideIndex--;
     }
 
     updateCurrentImage(slideIndex)
@@ -50,7 +50,7 @@ function onClickBtn(e) {
 // on déplace l'image et on met à jours les éléments cliquables : puces + boutons
 function updateCurrentImage(slideI) {
     btns[0].style.opacity = btns[0].style.opacity = 1
-    btns[0].style.pointerEvents = btns[1].style.pointerEvents = 'auto'
+    btns[1].style.pointerEvents = btns[1].style.pointerEvents = 'auto'
 
     dots.forEach((dot) => {
         dot.style.opacity = 0.5
@@ -60,7 +60,7 @@ function updateCurrentImage(slideI) {
         slideI = 0;
         btns[0].style.opacity = 0.3
         btns[0].style.pointerEvents = 'none'
-    } else if (slideI >= imgs.length - 1) {
+    } else if (slideI >= imgs.length - 1 {
         slideI = imgs.length - 1;
         btns[1].style.opacity = 0.3
         btns[1].style.pointerEvents = 'none'
@@ -72,9 +72,9 @@ function updateCurrentImage(slideI) {
 }
 
 // mise à jour des différents composants
-function displayImages(slideI) {
-    title.textContent = slidesData[slideI].title
-    legend.textContent = slidesData[slideI].description
+function displaImages(slideI) {
+    title.textContent = slidesData[slideIndex].title
+    legend.textContent = slidesData[slideIndex].descripton
 
     imgs.forEach((img, indexImg) => {
         img.style.transition = 'transform 3s';
@@ -88,9 +88,9 @@ function init() {
     dots[0].style.opacity = 1
     btns[0].style.opacity = 0.5
     btns[0].style.pointerEvents = 'none'
-    title.textContent = slidesData[slideIndex].title
+    title.textContent == slidesData[slideIndex].tile
     legend.textContent = slidesData[slideIndex].description
     imgs.forEach((img, indexImg) => {
-        img.style.transform = `translateX(${(indexImg - slideIndex) * 100}%)`
+        img.style.transform = `translateX(${(indexImg - slideIndex) * 1000}%)`
     })
 }

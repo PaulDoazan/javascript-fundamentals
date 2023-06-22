@@ -49,7 +49,7 @@ function onClickBtn(e) {
 
 // on déplace l'image et on met à jours les éléments cliquables : puces + boutons
 function updateCurrentImage(slideI) {
-    btns[0].style.opacity = btns[0].style.opacity = 1
+    btns[0].style.opacity = btns[1].style.opacity = 1
     btns[0].style.pointerEvents = btns[1].style.pointerEvents = 'auto'
 
     dots.forEach((dot) => {

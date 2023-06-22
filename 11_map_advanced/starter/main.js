@@ -20,4 +20,4 @@ async function getUsers() {
 // 1. afficher un tableau d'objet au format {name : Daphne Durand, age: 61}
 // 2. afficher un tableau d'objet au format {name : Daphne Durand, adult: true}
 // 3. afficher un tableau d'objet au format {name : Daphne Durand, adult: true}
-// 4. afficher un tableau de messages au format 'Bonjour Daphné, votre adresse "21 rue Voltaire, 33400 Talence" est-elle correcte ?'
+// 4. afficher un tableau de messages au format {mail: 'd.durand@example.com', message: 'Bonjour Daphné, votre adresse "21 rue Voltaire, 33400 Talence" est-elle correcte ?'}

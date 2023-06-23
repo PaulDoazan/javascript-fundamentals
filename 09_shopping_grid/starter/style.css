@@ -2,13 +2,13 @@ body {
   background-color: #eee !important;
 }
 
-.ratings i {
+.ratings {
   color: #f5b027;
 }
 
-.rate {
+/* .rate {
   color: #f5b027;
-}
+} */
 
 .install span {
   font-size: 12px;

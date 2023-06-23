@@ -3,6 +3,7 @@ import main from "./main.js";
 export default function init() {
     let canvas = document.getElementById("demoCanvas");
     let stage = new createjs.Stage(canvas);
+    createjs.Touch.enable(stage);
 
     stage.width = canvas.width;
     stage.height = canvas.height;

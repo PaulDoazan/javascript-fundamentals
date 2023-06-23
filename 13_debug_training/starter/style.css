@@ -82,8 +82,8 @@ body {
     height: var(--img-height);
     object-fit: fill;
     position: absolute;
-    transition-property: transform;
-    transition-duration: 2s;
+    /* transition-property: transform; */
+    /* transition-duration: 2s; */
     user-select: none;
 }
 
